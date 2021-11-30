@@ -5,6 +5,7 @@ import { GlobalStyles } from './components/global/GlobalStyle';
 import Login from './pages/login/Login';
 import New from './pages/new';
 import Home from './pages/Home';
+import List from './pages/list';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route end exat path="/" element={<Home />} />
+          <Route exat path="/list" element={<List />} />
           <Route exat path="/login" element={<Login />} />
           <Route exat path="/new" element={<New />} />
         </Routes>
