@@ -9,10 +9,16 @@ import { LoginHeader } from '../login/Styles';
 import { HomeContainer } from './styles';
 
 export default function Home() {
-  async function getLogin() {
-    await AutoLogin();
-  }
-  React.useEffect(() => getLogin(), []);
+  const [user, setUser] = React.useState(null);
+  React.useEffect(() => {
+    async function getLogin() {
+      await AutoLogin().then((data) => {
+        setUser(data);
+        console.log(user);
+      });
+    }
+    getLogin();
+  }, [user]);
 
   const links = [
     { to: 'list', label: 'Listar' },

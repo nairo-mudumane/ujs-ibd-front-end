@@ -32,14 +32,17 @@ export default function Form() {
       .then((response) => {
         setData(response.data);
         if (!data.error) {
-          SaveLogin(formFileds);
+          const id_admin = data.data[0].id;
+          const userStorage = formFileds;
+          userStorage['id'] = id_admin;
+          SaveLogin(userStorage);
           window.location.replace('/');
         }
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log('house erro');
         setError(err);
+        console.log(err.message);
         setIsLoading(false);
       });
   }
