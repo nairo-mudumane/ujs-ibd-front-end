@@ -6,11 +6,10 @@ import { SaveLogin } from '../../components/data/SaveLogin';
 export default function Form() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const [isAdmin, setIsAdmin] = React.useState(false);
   const [data, setData] = React.useState({});
   const [error, setError] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const baseUrl = 'http://localhost:8081/';
+  const baseUrl = 'http://localhost:8081/admin/login';
   const errorRef = React.useRef(null);
 
   function removeErrorMsg() {
@@ -28,9 +27,8 @@ export default function Form() {
     };
 
     setIsLoading(true);
-    console.log(`${baseUrl}${isAdmin}`);
     await axios
-      .post(`${baseUrl}${isAdmin}`, formFileds)
+      .post(baseUrl, formFileds)
       .then((response) => {
         setData(response.data);
         if (!data.error) {
@@ -49,7 +47,7 @@ export default function Form() {
   return (
     <LoginForm className="form" onSubmit={handleSuubmit}>
       <div className="form-group mb-3">
-        <label className="form-label">Nome</label>
+        <label className="form-label">Email</label>
         <input
           type="email"
           className="form-control"
@@ -70,30 +68,6 @@ export default function Form() {
         />
       </div>
 
-      <div className="radio-container mb-3">
-        <p>Entrar como:</p>
-
-        <div className="radio-container form-group mb-3">
-          <label className="radio-label">
-            Administrador{' '}
-            <input
-              type="radio"
-              name="isAdmin"
-              value="admin/login"
-              onChange={({ target }) => setIsAdmin(target.value)}
-            />
-          </label>
-          <label className="radio-label">
-            Estudante{' '}
-            <input
-              type="radio"
-              name="isAdmin"
-              value="login"
-              onChange={({ target }) => setIsAdmin(target.value)}
-            />
-          </label>
-        </div>
-      </div>
       <div className="form-group mb-3">
         <button type="submit" className="btn btn-sm btn-primary">
           Entrar
