@@ -52,25 +52,27 @@ export default function List() {
       </LoginHeader>
 
       <VerticalMargin>
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Nome</th>
-              <th scope="col">Curso</th>
-              <th scope="col">Cod. Talento</th>
-            </tr>
-          </thead>
-          <tbody>
-            {list &&
-              list.data.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.name}</td>
-                  <td>{user.course}</td>
-                  <td>{user.id_talent}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+        <div className="container mb-3">
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Cod. Talento</th>
+              </tr>
+            </thead>
+            <tbody>
+              {list &&
+                list.data.map((user) => (
+                  <tr key={user.id}>
+                    <td>{user.name}</td>
+                    <td>{user.course}</td>
+                    <td>{user.id_talent}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
       </VerticalMargin>
     </>
   );

@@ -20,7 +20,7 @@ export default function Home() {
   const links = [
     { to: 'list', label: 'Listar' },
     { to: 'new', label: 'Novo' },
-    { to: 'update', label: 'Actualizar' },
+    // { to: 'update', label: 'Actualizar' },
   ];
   return (
     <>
