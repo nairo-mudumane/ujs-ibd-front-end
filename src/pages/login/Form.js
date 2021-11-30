@@ -9,7 +9,7 @@ export default function Form() {
   const [data, setData] = React.useState({});
   const [error, setError] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const baseUrl = 'http://localhost:8081/admin/login';
+  const url = 'http://localhost:8081/admin/login';
   const errorRef = React.useRef(null);
 
   function removeErrorMsg() {
@@ -28,7 +28,7 @@ export default function Form() {
 
     setIsLoading(true);
     await axios
-      .post(baseUrl, formFileds)
+      .post(url, formFileds)
       .then((response) => {
         setData(response.data);
         if (!data.error) {
