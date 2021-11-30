@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { LoginForm } from './Styles';
+import { SaveLogin } from '../../components/data/SaveLogin';
 
 export default function Form() {
   const [email, setEmail] = React.useState('');
@@ -33,6 +34,7 @@ export default function Form() {
       .then((response) => {
         setData(response.data);
         if (!data.error) {
+          SaveLogin(formFileds);
           window.location.replace('/');
         }
         setIsLoading(false);

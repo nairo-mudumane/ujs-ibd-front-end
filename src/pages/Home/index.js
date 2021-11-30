@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AutoLogin } from '../../components/data/AutoLogin';
 import Head from '../../components/data/Head';
 import Logo from '../../components/logo';
 import Title from '../../components/Title';
@@ -8,10 +9,15 @@ import { LoginHeader } from '../login/Styles';
 import { HomeContainer } from './styles';
 
 export default function Home() {
+  async function getLogin() {
+    await AutoLogin();
+  }
+  React.useEffect(() => getLogin(), []);
+
   const links = [
-    { to: 'new', label: 'Novo Talento' },
-    { to: 'list', label: 'Listar Talentos' },
-    { to: 'login', label: 'Login' },
+    { to: 'list', label: 'Listar' },
+    { to: 'new', label: 'Novo' },
+    { to: 'update', label: 'Actualizar' },
   ];
   return (
     <>
