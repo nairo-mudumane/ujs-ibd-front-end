@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Actions from '../../components/Actions';
 import Head from '../../components/data/Head';
+import LoginHeader from '../../components/LoginHeader';
 import Logo from '../../components/logo';
 import Title from '../../components/Title';
 import VerticalMargin from '../../components/VerticalMargin';
-import { LoginHeader } from '../login/Styles';
 
 export default function List() {
   const [list, setList] = React.useState();
@@ -58,7 +60,8 @@ export default function List() {
               <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Curso</th>
-                <th scope="col">Cod. Talento</th>
+                <th scope="col">Talento</th>
+                <th scope="col">Accao</th>
               </tr>
             </thead>
             <tbody>
@@ -67,7 +70,21 @@ export default function List() {
                   <tr key={user.id}>
                     <td>{user.name}</td>
                     <td>{user.course}</td>
-                    <td>{user.id_talent}</td>
+                    <td>{user.talent}</td>
+                    <Actions>
+                      <Link
+                        to={`action/update/${user.id_student}`}
+                        className="btn btn-sm btn-primary"
+                      >
+                        Editar
+                      </Link>
+                      <Link
+                        to={`action/remove/${user.id_student}`}
+                        className="btn btn-sm btn-danger"
+                      >
+                        Apagar
+                      </Link>
+                    </Actions>
                   </tr>
                 ))}
             </tbody>

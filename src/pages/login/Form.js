@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { LoginForm } from './Styles';
 import { SaveLogin } from '../../components/data/SaveLogin';
+import LoginForm from '../../components/LoginForm';
 
 export default function Form() {
   const [email, setEmail] = React.useState('');

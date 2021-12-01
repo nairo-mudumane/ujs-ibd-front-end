@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React from 'react';
-import { FormContainer } from './FormStyles';
 
 export default function Form() {
   const inputs = [
@@ -13,9 +12,9 @@ export default function Form() {
     { type: 'text', label: 'Nome', id: 'name', name: 'name' },
     {
       type: 'text',
-      label: 'Codigo do talento',
-      id: 'id_talent',
-      name: 'id_talent',
+      label: 'Talento',
+      id: 'talent',
+      name: 'talent',
     },
     { type: 'text', label: 'Curso', id: 'course', name: 'course' },
     { type: 'email', label: 'Email', id: 'email', name: 'email' },
@@ -50,7 +49,7 @@ export default function Form() {
   const [inputValues, setInputValues] = React.useState({
     id_student: '',
     name: '',
-    id_talent: '',
+    talent: '',
     course: '',
     email: '',
     contact: '',
@@ -85,7 +84,7 @@ export default function Form() {
   }
 
   return (
-    <FormContainer onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       {inputs.map((input) => (
         <div className="form-group mb-3" key={input.id}>
           <label className="form-label" htmlFor={input.id}>
@@ -125,6 +124,6 @@ export default function Form() {
           Cadastrar
         </button>
       </div>
-    </FormContainer>
+    </form>
   );
 }

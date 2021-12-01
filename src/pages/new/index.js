@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from '../../components/data/Head';
+import LoginHeader from '../../components/LoginHeader';
 import Logo from '../../components/logo';
 import Title from '../../components/Title';
 import VerticalMargin from '../../components/VerticalMargin';
-import { LoginBody, LoginHeader, LoginTitle } from '../login/Styles';
 import Form from './Form';
 
 export default function New() {
@@ -13,18 +13,15 @@ export default function New() {
 
       <LoginHeader>
         <Logo />
-
-        <LoginTitle>
-          <Title className="no-margin" text="Departamento de cultura" />
-        </LoginTitle>
+        <Title className="no-margin" text="Departamento de cultura" />
       </LoginHeader>
 
-      <LoginBody className="container">
+      <div className="container">
         <VerticalMargin>
           <Title className="no-margin" text="Cadastrar aluno" />
           <Form />
         </VerticalMargin>
-      </LoginBody>
+      </div>
     </>
   );
 }

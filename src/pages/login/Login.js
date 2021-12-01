@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from '../../components/data/Head';
+import LoginHeader from '../../components/LoginHeader';
 import Logo from '../../components/logo';
 import Title from '../../components/Title';
 import VerticalMargin from '../../components/VerticalMargin';
 import Form from './Form';
-import { LoginHeader, LoginTitle, LoginBody } from './Styles';
 
 export default function Login() {
   return (
@@ -13,17 +13,15 @@ export default function Login() {
 
       <LoginHeader>
         <Logo />
-        <LoginTitle>
-          <Title className="no-margin" text="Departamento de cultura" />
-        </LoginTitle>
+        <Title className="no-margin" text="Departamento de cultura" />
       </LoginHeader>
 
-      <LoginBody className="container">
+      <div className="container">
         <VerticalMargin>
           <p>Preencha os campos.</p>
           <Form />
         </VerticalMargin>
-      </LoginBody>
+      </div>
     </>
   );
 }

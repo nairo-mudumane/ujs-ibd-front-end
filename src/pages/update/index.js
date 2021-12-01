@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from '../../components/data/Head';
+import LoginHeader from '../../components/LoginHeader';
 import Logo from '../../components/logo';
 import Title from '../../components/Title';
 import VerticalMargin from '../../components/VerticalMargin';
-import { LoginHeader } from '../login/Styles';
 import Search from './Search';
 
 export default function Update() {
