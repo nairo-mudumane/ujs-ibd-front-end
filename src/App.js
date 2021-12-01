@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <Route end exat path="/" element={<Home />} />
           <Route exat path="/list" element={<List />} />
-          <Route exat path="/actions/update/:id" element={<Update />} />
           <Route exat path="/actions/remove/:id" element={<Remove />} />
+          <Route exat path="/actions/update/:id" element={<Update />} />
           <Route exat path="/login" element={<Login />} />
           <Route exat path="/new" element={<New />} />
         </Routes>

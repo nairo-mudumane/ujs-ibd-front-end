@@ -89,6 +89,10 @@ export default function List() {
                 ))}
             </tbody>
           </table>
+
+          <div className="mb-4">
+            <Link to="/new">Registar novo</Link>
+          </div>
         </div>
       </VerticalMargin>
     </>
