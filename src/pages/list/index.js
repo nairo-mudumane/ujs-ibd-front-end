@@ -73,13 +73,13 @@ export default function List() {
                     <td>{user.talent}</td>
                     <Actions>
                       <Link
-                        to={`action/update/${user.id_student}`}
+                        to={`/actions/update/${user.id_student}`}
                         className="btn btn-sm btn-primary"
                       >
                         Editar
                       </Link>
                       <Link
-                        to={`action/remove/${user.id_student}`}
+                        to={`/actions/remove/${user.id_student}`}
                         className="btn btn-sm btn-danger"
                       >
                         Apagar

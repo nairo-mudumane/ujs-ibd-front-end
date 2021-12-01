@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AutoLogin } from '../../components/data/AutoLogin';
+import { getLogin } from '../../components/data/GetLogin';
 import Head from '../../components/data/Head';
 import HomeContainer from '../../components/HomeContainer';
 import LoginHeader from '../../components/LoginHeader';
@@ -9,12 +9,7 @@ import Title from '../../components/Title';
 import VerticalMargin from '../../components/VerticalMargin';
 
 export default function Home() {
-  React.useEffect(() => {
-    async function getLogin() {
-      await AutoLogin().then((data) => console.log(data));
-    }
-    getLogin();
-  }, []);
+  getLogin();
 
   const links = [
     { to: 'list', label: 'Listar' },
