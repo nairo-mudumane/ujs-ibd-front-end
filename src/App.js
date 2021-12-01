@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import List from './pages/list';
 import Update from './pages/actions/Update';
 import Remove from './pages/actions/Remove';
+import ReadById from './pages/actions/ReadById';
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
           <Route end exat path="/" element={<Home />} />
           <Route exat path="/list" element={<List />} />
           <Route exat path="/actions/remove/:id" element={<Remove />} />
+          <Route
+            exat
+            path="/actions/update/:id/confirm"
+            element={<ReadById />}
+          />
           <Route exat path="/actions/update/:id" element={<Update />} />
           <Route exat path="/login" element={<Login />} />
           <Route exat path="/new" element={<New />} />

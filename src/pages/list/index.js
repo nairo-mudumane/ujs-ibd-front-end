@@ -73,8 +73,9 @@ export default function List() {
                     <td>{user.talent}</td>
                     <Actions>
                       <Link
-                        to={`/actions/update/${user.id_student}`}
-                        className="btn btn-sm btn-primary"
+                        to={`/actions/update/${user.id_student}/confirm`}
+                        className="btn btn-sm btn-primary disabled"
+                        disabled
                       >
                         Editar
                       </Link>
