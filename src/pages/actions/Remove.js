@@ -14,7 +14,7 @@ export default function Remove() {
   const params = useParams();
   const url = `http://localhost:8081/remove/students/${params.id}`;
 
-  React.useEffect(() => deleteUser(), []);
+  React.useEffect(() => deleteUser());
 
   async function deleteUser() {
     setIsLoading(true);
